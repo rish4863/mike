@@ -68,7 +68,7 @@ app.post('/updateProfile', async (req, res) => {
     console.log("user Name: ", req.body.devName)
     
     client.connect; 
-    const collection = client.db("quebec").collection("dev-profiles");
+    const collection = client.db("quebec").collection("quebec1");
   
     // put it into mongo
     let result = await collection.findOneAndUpdate( 
@@ -95,7 +95,7 @@ app.post('/insertProfile', async (req, res) => {
     console.log("user Name: ", req.body.devName)
     
     client.connect; 
-    const collection = client.db("quebec").collection("dev-profiles");
+    const collection = client.db("quebec").collection("quebec1");
   
     // put it into mongo
     let result = await collection.insertOne( 
@@ -121,7 +121,7 @@ app.post('/deleteProfile', async (req, res) => {
     console.log("user Name: ", req.body.devName)
     
     client.connect; 
-    const collection = client.db("quebec").collection("dev-profiles");
+    const collection = client.db("quebec").collection("quebec1");
   
     // put it into mongo
     let result = await collection.findOneAndDelete( 
