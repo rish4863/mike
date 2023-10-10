@@ -37,7 +37,7 @@ async function cxnDB(){
 
   try{
     await client.connect().then(
-      client.db("rish").collection("dev-profiles")
+      client.db("quebec").collection("dev-profiles")
       );       
   }
   catch(e){
@@ -52,7 +52,7 @@ async function cxnDB(){
 app.get('/', async (req, res) => {
 
  client.connect;
-  let mongoResult = await client.db("quebec").collection("dev-profiles").find().toArray();
+  let mongoResult = await client.db("quebec").collection("quebec1").find().toArray();
 // console.log("get/: ", result);
 console.log(mongoResult);
   //'res.send("here for a second: " + result[0].name)
@@ -95,7 +95,7 @@ app.post('/insertProfile', async (req, res) => {
     console.log("user Name: ", req.body.devName)
     
     client.connect; 
-    const collection = client.db("barrys-cool-papa-database").collection("dev-profiles");
+    const collection = client.db("quebec").collection("dev-profiles");
   
     // put it into mongo
     let result = await collection.insertOne( 
@@ -165,3 +165,4 @@ app.post('/postClientData', function (req, res) {
 })
 
 
+app.listen(port, () => console.log(`Server is running...on ${ port }` ));
